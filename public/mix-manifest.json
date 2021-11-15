@@ -1,6 +1,13 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/img/ballon.png": "/img/ballon.png",
     "/img/city-left.png": "/img/city-left.png",
-    "/img/city-right.png": "/img/city-right.png"
+    "/img/city-right.png": "/img/city-right.png",
+    "/img/cloud1.png": "/img/cloud1.png",
+    "/img/cloud2.png": "/img/cloud2.png",
+    "/img/heli.png": "/img/heli.png",
+    "/img/logo-color.png": "/img/logo-color.png",
+    "/img/logo.png": "/img/logo.png",
+    "/img/sun.png": "/img/sun.png"
 }

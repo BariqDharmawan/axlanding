@@ -1,0 +1,20 @@
+.nav-item {
+    &--not-hoverable {
+        .nav-link:hover {
+            font-weight: normal;
+        }
+    }
+}
+
+.nav-link {
+    transition: all 150ms;
+    @extend .text-white;
+
+    &:hover {
+        font-weight: bold;
+    }
+
+    &.active {
+        font-weight: bold;
+    }
+}

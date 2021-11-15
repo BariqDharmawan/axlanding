@@ -8,7 +8,6 @@
     <title>@yield('title')</title>
 </head>
 <body>
-    <nav class="bg-transparent fixed-top p-5 z-10"></nav>
     @yield('content')
     <footer></footer>
     <script src="{{ asset('js/app.js') }}"></script>

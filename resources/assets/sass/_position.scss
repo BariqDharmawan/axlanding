@@ -1,0 +1,61 @@
+$xside: (left, right);
+
+.absolute {
+    &-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @each $side in $xside {
+            &--#{$side} {
+                &-5 {
+                    #{$side}: 5%;
+                }
+                &-17 {
+                    #{$side}: 17%;
+                }
+                &-45 {
+                    #{$side}: 45%;
+                }
+                &-26 {
+                    #{$side}: 26%;
+                }
+            }
+        }
+    }
+    &-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+.left {
+    &-auto {
+        left: auto;
+    }
+    &-35 {
+        left: 35%;
+    }
+}
+
+.top {
+    &-10px {
+        top: 10px;
+    }
+    &-30px {
+        top: 30px;
+    }
+    &--16px {
+        top: -16px;
+    }
+    &-35px {
+        top: 35px;
+    }
+}
+
+.right {
+    &-6-5 {
+        right: 6.5%;
+    }
+}

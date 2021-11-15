@@ -1,6 +1,6 @@
 .hero {
     &-darken-red {
-        position: relative;
+        overflow: hidden;
 
         &::after {
             content: '';

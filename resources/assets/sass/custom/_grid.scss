@@ -1,0 +1,11 @@
+[class*="col-"] {
+    flex: 0 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+    .col-lg {
+        &-45-percen {
+            width: 45%;
+        }
+    }
+}
