@@ -1,0 +1,13 @@
+.bg {
+    &-gradient {
+        &-pink-to-red-bottom {
+            background: linear-gradient(
+                to bottom,
+                rgba(255, 107, 117, 1) 0%,
+                rgba(255, 107, 117, 1) 18%,
+                rgba(213, 42, 70, 1) 82%,
+                rgba(213, 42, 70, 1) 100%
+            );
+        }
+    }
+}
