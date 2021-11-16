@@ -11,13 +11,15 @@
     @yield('content')
     <footer class="bg-red-blood text-white py-5">
         <div class="container">
-            <div class="row justify-content-between">
-                <div class="col-auto d-flex align-items-end">
+            <div class="row mx-0 justify-content-center justify-content-lg-between">
+                <div class="col-auto d-flex align-items-lg-end mb-5">
                     <small>Copyright &copy; {{ date('Y') }}, {{ config('app.name') }}.</small>
                 </div>
-                <div class="col-lg-4 d-flex flex-column align-items-end">
-                    @include('partials.nav-logo')
-                    <address class="d-block mt-4 text-end">
+                <div class="col-lg-4 d-flex flex-column justify-content-center justify-content-lg-start align-items-lg-end">
+                    <div class="d-flex justify-content-center">
+                        @include('partials.nav-logo')
+                    </div>
+                    <address class="d-block mt-4 text-center text-lg-end mb-5 mb-lg-0">
                         Jl. Raya Condet No 27.B, Kel. Balekambang, Kec. Kramat Jati, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13530 Indonesia.
                     </address>
                     <ul class="d-flex ps-0 m-0">

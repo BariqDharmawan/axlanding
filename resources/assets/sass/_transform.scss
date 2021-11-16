@@ -1,3 +1,9 @@
-.translate-y--half {
-    transform: translateY(-50%);
+.translate-y {
+    @media screen and (min-width: $desktop-query) {
+        &-lg {
+            &--half {
+                transform: translateY(-50%);
+            }
+        }
+    }
 }

@@ -66,3 +66,13 @@ $xside: (left, right);
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.position {
+    @media screen and (min-width: $desktop-query) {
+        &-lg {
+            &-static {
+                position: static;
+            }
+        }
+    }
+}

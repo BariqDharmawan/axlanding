@@ -1,11 +1,21 @@
 .fs {
-    &-large {
-        font-size: 47px;
+    @media screen and (min-width: $desktop-query) {
+        &-lg {
+            &-large {
+                font-size: 47px;
+            }
+        }
     }
 }
 
 .text {
     &-midnight-blue {
         color: $midnight-blue;
+    }
+
+    &-shadow {
+        &-md {
+            text-shadow: 2px 3px 7px rgba(0,0,0,0.4);
+        }
     }
 }
