@@ -80,7 +80,7 @@
 
 <main>
     <section class="translate-y-lg--half fixed-bottom position-lg-static">
-        <div class="container">
+        <div class="container px-0 px-lg-3">
             <div class="row mx-0 justify-content-center">
                 <div class="col-4 col-lg-3 px-0 px-lg-3">
                     <div class="card h-100 shadow-sm rounded-0 border-start-0">
