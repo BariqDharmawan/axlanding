@@ -12,7 +12,7 @@
     <footer class="bg-red-blood text-white py-5">
         <div class="container">
             <div class="row mx-0 justify-content-center justify-content-lg-between">
-                <div class="col-auto d-flex align-items-lg-end mb-5">
+                <div class="col-auto d-flex align-items-lg-end mb-5 mb-lg-0">
                     <small>Copyright &copy; {{ date('Y') }}, {{ config('app.name') }}.</small>
                 </div>
                 <div class="col-lg-4 d-flex flex-column justify-content-center justify-content-lg-start align-items-lg-end">
