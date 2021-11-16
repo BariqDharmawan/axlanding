@@ -1,9 +1,16 @@
 .nav-item {
+    list-style-type: none;
+
     &--not-hoverable {
         .nav-link:hover {
             font-weight: normal;
         }
     }
+
+    &--link-no-padding .nav-link {
+        padding: 0;
+    }
+
 }
 
 .nav-link {

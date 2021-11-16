@@ -18,9 +18,7 @@
     </nav>
     <nav class="navbar navbar-expand-lg bg-transparent px-3 z-10">
         <div class="container-fluid">
-            <a href="{{ route('landing') }}" class="nav__logo">
-                <img src="{{ asset('img/logo.png') }}" height="40px" alt="{{ config('app.en') }}">
-            </a>
+            @include('partials.nav-logo');
             <div class="collapse navbar-collapse justify-content-end">
                 <ul class="navbar-nav">
                     @foreach ($menus as $menu)
