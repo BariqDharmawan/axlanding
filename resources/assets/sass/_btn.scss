@@ -3,4 +3,20 @@
         color: $midnight-blue;
         background-color: $light-orange;
     }
+    &-midnight-blue {
+        color: white !important;
+        background-color: $midnight-blue;
+
+        &:hover {
+            background-color: darken($midnight-blue, 10%);
+        }
+    }
+    &-maroon {
+        color: white;
+        background-color: $maroon;
+
+        &:hover {
+            background-color: darken($maroon, 10%);
+        }
+    }
 }
