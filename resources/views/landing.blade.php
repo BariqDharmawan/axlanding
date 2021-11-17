@@ -79,42 +79,24 @@
 </header>
 
 <main>
-    <section class="translate-y-lg--half fixed-bottom position-lg-static">
+    <section class="translate-y-lg--half fixed-bottom position-lg-relative z-20" id="landing-feature">
         <div class="container px-0 px-lg-3">
             <div class="row mx-0 justify-content-center">
+                @for ($i = 0; $i < 3; $i++)
                 <div class="col-4 col-lg-3 px-0 px-lg-3">
                     <div class="card h-100 shadow-sm rounded-0 border-start-0">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <p class="text-midnight-blue fw-bold d-none d-lg-block mb-0">Cek Tarif</p>
-                            <div class="icon-quick calculation">
-                                <i class="icon-calculation"></i>
+                        <div class="card-body d-flex align-items-center px-4">
+                            <p class="text-midnight-blue fw-bold fs-4 d-none d-lg-block mb-0">Cek Tarif</p>
+                            <div class="icon-quick calculation ms-lg-auto">
+                                <i class="icon-calculation fs-4"></i>
                                 <p class="text-midnight-blue fw-bold d-lg-none mb-0">Tarif</p>
                             </div>
                         </div>
+                        <a href="#" class="stretched-link hw-0" data-bs-toggle="modal"
+                        data-bs-target="#landing-feature-{{ $i }}"></a>
                     </div>
                 </div>
-                <div class="col-4 col-lg-3 px-0 px-lg-3">
-                    <div class="card h-100 shadow-sm rounded-0">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <p class="text-midnight-blue fw-bold d-none d-lg-block mb-0">Order <br> Pengiriman</p>
-                            <div class="icon-quick calculation">
-                                <i class="icon-calculation"></i>
-                                <p class="text-midnight-blue fw-bold d-lg-none mb-0">Tarif</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4 col-lg-3 px-0 px-lg-3">
-                    <div class="card h-100 shadow-sm rounded-0 border-end-0">
-                        <div class="card-body d-flex justify-content-between align-items-center">
-                            <p class="text-midnight-blue fw-bold d-none d-lg-block mb-0">Agent Kami</p>
-                            <div class="icon-quick calculation">
-                                <i class="icon-calculation"></i>
-                                <p class="text-midnight-blue fw-bold d-lg-none mb-0">Tarif</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endfor
             </div>
         </div>
     </section>
@@ -122,20 +104,24 @@
     <section class="mb-8 mt-4">
         <div class="container">
             <h2 class="fw-bold text-midnight-blue fs-1 mb-5">Mengapa kami ?</h2>
-            <div class="row mx-0">
-                @for ($i = 1; $i <= 3; $i++)
-                <div class="col-lg-4 @if($i != 3) pe-lg-5 mb-5 mb-lg-0 @endif">
-                    <div class="card h-100 shadow-lg rounded-10 p-3 p-lg-5">
-                        <div class="card-body">
-                            <p class="text-midnight-blue mb-3 fs-3 text-capitalize">title {{ $i }}</p>
-                            <p class="text-dark">
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                                Quia nobis ducimus voluptates odit dolore veritatis ut cumque illo ab sapiente.
-                            </p>
+
+            <div class="swiper slider-third-on-desktop-one-on-mobile px-4">
+                <div class="swiper-wrapper pb-8">
+                    @for ($i = 0; $i < 6; $i++)
+                    <div class="swiper-slide shadow-md rounded-10">
+                        <div class="card rounded-10">
+                            <div class="card-body p-lg-5">
+                                <p class="text-midnight-blue mb-3 fs-3 text-capitalize">title {{ $i }}</p>
+                                <p class="text-dark">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Quia nobis ducimus voluptates odit dolore veritatis ut cumque illo ab sapiente.
+                                </p>
+                            </div>
                         </div>
                     </div>
+                    @endfor
                 </div>
-                @endfor
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
@@ -164,7 +150,49 @@
             <h2 class="fw-bold text-midnight-blue fs-1 mb-5 text-capitalize">
                 Pertanyaan <br> yang sering diajukan
             </h2>
+            <div class="swiper slider-third-on-desktop-one-on-mobile ps-3 pe-5 mb-4">
+                <div class="swiper-wrapper py-8">
+                    @for ($i = 0; $i < 6; $i++)
+                    <div class="swiper-slide shadow-md rounded-10">
+                        <div class="card rounded-10">
+                            <div class="card-body p-lg-5">
+                                <q class="text-dark">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                                    Quia nobis ducimus voluptates odit dolore veritatis ut cumque illo ab sapiente.
+                                </q>
+                                <p class="text-midnight-blue mt-3 mb-0 fs-3 text-capitalize fw-bold">People name</p>
+                                <img src="{{ asset('img/dummy/people.jpg') }}" alt=""
+                                height="60px" width="60px" class="rounded-circle el-right-0-bottom-cuttof-xy-half">
+                            </div>
+                        </div>
+                    </div>
+                    @endfor
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
         </div>
     </section>
 </main>
+@endsection
+
+@section('components')
+    @for ($i = 0; $i < 3; $i++)
+    <div class="modal fade" id="landing-feature-{{ $i }}" tabindex="-1" aria-labelledby="landing-featureLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="landing-featureLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis saepe iure ut labore, distinctio minima nemo consequuntur perspiciatis a quibusdam molestias iusto. Suscipit odio voluptatum obcaecati quaerat ducimus saepe blanditiis?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+        </div>
+    </div>
+    </div>
+    @endfor
 @endsection

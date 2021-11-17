@@ -1,6 +1,18 @@
 $xside: (left, right);
 
+%absoluteBottom {
+    position: absolute;
+    bottom: 0;
+}
+
 .absolute {
+    &-all-0 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
     &-top {
         position: absolute;
         top: 0;
@@ -23,9 +35,9 @@ $xside: (left, right);
             }
         }
     }
+
     &-bottom {
-        position: absolute;
-        bottom: 0;
+        @extend %absoluteBottom;
         left: 0;
     }
 }
@@ -70,9 +82,15 @@ $xside: (left, right);
 .position {
     @media screen and (min-width: $desktop-query) {
         &-lg {
-            &-static {
-                position: static;
+            &-relative {
+                position: relative;
             }
         }
     }
+}
+
+.el-right-0-bottom-cuttof-xy-half {
+    @extend %absoluteBottom;
+    right: 0;
+    transform: translate(50%, 50%);
 }

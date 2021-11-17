@@ -1,0 +1,7 @@
+// @import '~swiper/scss';
+// @import '~swiper/scss/navigation';
+// @import '~swiper/scss/pagination';
+
+ [class^='swiper-button-']::after {
+     content: none;
+ }

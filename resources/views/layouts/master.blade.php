@@ -9,6 +9,7 @@
 </head>
 <body>
     @yield('content')
+    @yield('components')
     <footer class="bg-red-blood text-white py-5">
         <div class="container">
             <div class="row mx-0 justify-content-center justify-content-lg-between">
