@@ -1,3 +1,11 @@
+[class*='btn'] {
+    color: white;
+
+    &:hover {
+        color: white;
+    }
+}
+
 .btn {
     &-orange {
         color: $midnight-blue;
@@ -9,6 +17,13 @@
 
         &:hover {
             background-color: darken($midnight-blue, 10%);
+        }
+    }
+    &-red {
+        background-color: $red;
+
+        &:hover {
+            background-color: darken($red, 10%);
         }
     }
     &-maroon {

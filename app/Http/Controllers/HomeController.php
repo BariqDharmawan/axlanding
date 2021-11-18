@@ -7,22 +7,28 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        return view('home');
+        $quickFeature = [
+            [
+                'icon' => 'calculation',
+                'name' => 'Cek Tarif',
+            ],
+            [
+                'icon' => 'delivery',
+                'name' => 'Order Pengiriman',
+            ],
+            [
+                'icon' => 'maps-and-flags',
+                'name' => 'Agen kami',
+            ],
+        ];
+        collect($quickFeature);
+
+        return view('landing', compact('quickFeature'));
     }
 }

@@ -82,21 +82,25 @@
     <section class="translate-y-lg--half fixed-bottom position-lg-relative z-20" id="landing-feature">
         <div class="container px-0 px-lg-3">
             <div class="row mx-0 justify-content-center">
-                @for ($i = 0; $i < 3; $i++)
+                @foreach ($quickFeature as $feature)
                 <div class="col-4 col-lg-3 px-0 px-lg-3">
                     <div class="card h-100 shadow-sm rounded-0 border-start-0">
                         <div class="card-body d-flex align-items-center px-4">
-                            <p class="text-midnight-blue fw-bold fs-4 d-none d-lg-block mb-0">Cek Tarif</p>
-                            <div class="icon-quick calculation ms-lg-auto">
-                                <i class="icon-calculation fs-4"></i>
-                                <p class="text-midnight-blue fw-bold d-lg-none mb-0">Tarif</p>
+                            <p class="text-midnight-blue fw-bold fs-4 d-none d-lg-block mb-0">
+                                {{ $feature['name'] }}
+                            </p>
+                            <div class="icon-quick {{ $feature['icon'] }} ms-lg-auto">
+                                <i class="icon-{{ $feature['icon'] }} fs-4"></i>
+                                <p class="text-midnight-blue fw-bold d-lg-none mb-0">
+                                    {{ $feature['name'] }}
+                                </p>
                             </div>
                         </div>
                         <a href="#" class="stretched-link hw-0" data-bs-toggle="modal"
-                        data-bs-target="#landing-feature-{{ $i }}"></a>
+                        data-bs-target="#quick-feature-{{ Str::slug($feature['name']) }}"></a>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </section>
@@ -176,23 +180,32 @@
 @endsection
 
 @section('components')
-    @for ($i = 0; $i < 3; $i++)
-    <div class="modal fade" id="landing-feature-{{ $i }}" tabindex="-1" aria-labelledby="landing-featureLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="landing-featureLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis saepe iure ut labore, distinctio minima nemo consequuntur perspiciatis a quibusdam molestias iusto. Suscipit odio voluptatum obcaecati quaerat ducimus saepe blanditiis?
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
-        </div>
-    </div>
-    </div>
-    @endfor
+    <x-modal-basic id="quick-feature-cek-tarif" title="Dapatkan Tarif Kiriman">
+        <form action="" method="post">
+            @csrf
+            <x-input label="Pilih daerah asal" type="select" name="city">
+                @for ($i = 0; $i < 200; $i++)
+                <option value="opsi-{{ $i }}">opsi {{ $i }}</option>
+                @endfor
+            </x-input>
+            <x-input label="Pilih Negara Tujuan" type="select" name="country">
+                @for ($i = 0; $i < 200; $i++)
+                <option value="opsi-{{ $i }}">opsi {{ $i }}</option>
+                @endfor
+            </x-input>
+            <x-input label="Perkiraan berat" placeholder="Masukan perkiraan berat disni"
+            type="number" inputmode="numeric" name="weight" />
+            <button type="submit" class="btn w-100 rounded-pill btn-red">Lihat tarif</button>
+        </form>
+    </x-modal-basic>
+
+    <x-modal-basic id="quick-feature-agen-kami" title="Daftar Agent Kami">
+        <form action="" method="GET">
+            <x-input label="Pilih agent Abang Express" type="select" name="choose_agent">
+                @for ($i = 1; $i < 200; $i++)
+                    <option value="kota-{{ $i }}">Kota {{ $i }}</option>
+                @endfor
+            </x-input>
+        </form>
+    </x-modal-basic>
 @endsection
